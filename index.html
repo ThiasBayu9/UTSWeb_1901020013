@@ -1,0 +1,38 @@
+<!--
+  this is main part of website that link everything that u add into one thing that viewable (i guess ?)
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>UTS</title>
+    <!-- Import Styles script -->
+    <link rel="stylesheet" href="./assets/styles.css" />
+    <!-- Import Vue.js thing -->
+    <script src="https://unpkg.com/vue@3.0.11/dist/vue.global.js"></script>
+  </head>
+  <body>
+    <div id="app">
+      <div class="nav-bar">
+        <h1 class="symbol">⣆</h1>
+      </div>
+
+      <div class="cart">You have ({{ cart.length }}) item on cart <br> are you gonna pay that ?</div>
+      <product-display :premium="premium" @add-to-cart="updateCart"></product-display>
+    </div>
+
+    <!-- Import the App -->
+    <script src="./main.js"></script>
+
+    <!-- Import other Components for the app -->
+    <script src="./components/ProductDisplay.js"></script>
+    <script src="./components/ReviewForm.js"></script>
+    <script src="./components/ReviewList.js"></script>
+
+    <!-- Mount App because why not -->
+    <script>
+      const mountedApp = app.mount('#app')
+    </script>
+  </body>
+</html>
